@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hoofdsteden opgave</title>
+</head>
+<body>
+    <script>
+        hoevaak = prompt("hoevaak wil je spelen?");
+
+            var punten =localStorage.getItem("punten");
+            var spellen =localStorage.getItem("spellen");
+
+        for(let i=1; i<=hoevaak; i++){
+
+            const landen    =["Italy", "Luxembourg", "Belgium", "Denmark", "Finland", "France", "Slovakia", "Slovenia", "Germany", "Greece", "Ireland", "Netherlands","Portugal", "Spain", "Sweden", "United Kingdom", "Cyprus","Lithuania", "Czech Republic", "Estonia", "Hungary", "Austria", "Poland"];
+            const hoofdstad =["Rome", "Luxembourg", "Brussels", "Copenhagen", "Helsinki", "Paris", "Bratislava","Ljubljana", "Berlin", "Athens", "Dublin", "Amsterdam", "Lisbon", "Madrid", "Stockholm", "London", "Nicosia", "Vilnius", "Prague", "Tallin", "Budapest", "Vienna", "Warsaw"];    
+            const randomElement = Math.floor(Math.random() * landen.length);    
+
+
+                console.log(randomElement, landen[randomElement], hoofdstad[randomElement]);
+                console.log(i);
+
+                antwoord = prompt("wat is de hoofdstad van " + landen[randomElement] + "?" + "\nRome\nLuxembourg\nBrussels\nCopenhagen\nHelsinki\nParis\nBratislava\nLjubljana\nBerlin\nAthens\nDublin\nAmsterdam\nLisbon\nMadrid\nStockholm\nLondon\nNicosia\nVilnius\nPrague\nTallin\nBudapest\nVienna\nWarsaw");
+
+
+
+
+                if(antwoord == hoofdstad[randomElement]){
+                    console.log("+1 punt");
+                    punten++;
+                    localStorage.setItem("punten", punten);
+                    console.log("je hebt: " + punten + " punten");
+                };
+
+                     if(i == hoevaak){
+                        spellen++;
+                        localStorage.setItem("spellen", spellen);
+                        console.log("je hebt " + spellen + " keer gespeeld")
+                        document.write("je hebt " + spellen + " keer gespeeld <br>");
+                        document.write("en je hebt " + punten + " punten gehaald");
+
+                        };
+        }
+     </script>
+</body>
+</html>
